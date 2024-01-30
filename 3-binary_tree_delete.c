@@ -12,7 +12,7 @@
  * @tree should be set to NULL after calling this function to avoid dangling
  *
  * Note: If the nodes of the binary tree contain dynamically allocated memory,
- * it's the responsibility of the user to free that memory before calling 
+ * it's the responsibility of the user to free that memory before calling
  *
  * @tree: Pointer to the root node of the binary tree to be deleted.
  */
