@@ -13,7 +13,7 @@ int is_full(const binary_tree_t *tree, const binary_tree_t *root)
 		return (1);
 	if ((tree == root) && (tree->right && tree->left))
 	{
-		if isfull !=0
+		if (isfull !=0)
 			return (0);
 		return (1);
 	}
