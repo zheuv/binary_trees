@@ -4,7 +4,7 @@
  *                        with respect to another given node.
  *
  * @tree: Pointer to the binary tree node to calculate the balance factor for
- * @hypothetical_root: Pointer to the binary tree node with respect to which the balance
+ * @hypothetical_root: Pointer to the binary tree node with respect to which
  *         factor is calculated.
  *
  * This function calculates the balance factor of a binary tree node by
@@ -14,7 +14,7 @@
  * calculation is performed recursively.
  *
  * @tree: Pointer to the binary tree node to calculate the balance factor for
- * @hypothetical_root: Pointer to the binary tree node with respect to which the balance
+ * @hypothetical_root: Pointer to the binary tree node with respe
  *         factor is calculated.
  *
  * Return: The balance factor of the binary tree node.
