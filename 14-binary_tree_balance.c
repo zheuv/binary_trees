@@ -19,7 +19,7 @@
  *
  * Return: The balance factor of the binary tree node.
  */
-int balance(const binary_tree_t *tree, const binary_tree_t root)
+int balance(const binary_tree_t *tree, const binary_tree_t *root)
 {
 	int right = 1;
 	int left = 1;
