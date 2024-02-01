@@ -19,15 +19,15 @@
  *
  * Return: The balance factor of the binary tree node.
  */
-int binary_tree_balance2(const binary_tree_t *tree, const binary_tree_t *hypothetical_root)
+int balance(const binary_tree_t *tree, const binary_tree_t *hypothetical_root)
 {
         int right = 1;
         int left = 1;
 
         if (!tree)
                 return (0);
-        left += binary_tree_balance2(tree->left, hypothetical_root);
-        right += binary_tree_balance2(tree->right, hypothetical_root);
+        left += balance(tree->left, hypothetical_root);
+        right += balance(tree->right, hypothetical_root);
 
         if (tree == hypothetical_root)
                 return (left - right);
@@ -51,6 +51,6 @@ int binary_tree_balance2(const binary_tree_t *tree, const binary_tree_t *hypothe
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-        return (binary_tree_balance2(tree, tree));
+        return (balance(tree, tree));
 }
 
