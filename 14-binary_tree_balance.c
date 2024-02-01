@@ -4,7 +4,7 @@
  *                        with respect to another given node.
  *
  * @tree: Pointer to the binary tree node to calculate the balance factor for
- * @root: Pointer to the binary tree node with respect to which
+ * @hypothetical_root: Pointer to the binary tree node with respect to which
  *         factor is calculated.
  *
  * This function calculates the balance factor of a binary tree node by
@@ -14,26 +14,26 @@
  * calculation is performed recursively.
  *
  * @tree: Pointer to the binary tree node to calculate the balance factor for
- * @root: Pointer to the binary tree node with respe
+ * @hypothetical_root: Pointer to the binary tree node with respe
  *         factor is calculated.
  *
  * Return: The balance factor of the binary tree node.
  */
-int balance(const binary_tree_t *tree, const binary_tree_t *root)
+int binary_tree_balance2(const binary_tree_t *tree, const binary_tree_t *hypothetical_root)
 {
-	int right = 1;
-	int left = 1;
+        int right = 1;
+        int left = 1;
 
-	if (!tree)
-		return (0);
-	left += balance(tree->left, root);
-	right += balance(tree->right, root);
+        if (!tree)
+                return (0);
+        left += binary_tree_balance2(tree->left, hypothetical_root);
+        right += binary_tree_balance2(tree->right, hypothetical_root);
 
-	if (tree == root)
-		return (left - right);
-	if (left > right)
-		return (left);
-	return (right);
+        if (tree == hypothetical_root)
+                return (left - right);
+        if (left > right)
+                return (left);
+        return (right);
 }
 /**
  * binary_tree_balance - Calculate the balance factor of a binary tree node.
@@ -51,5 +51,6 @@ int balance(const binary_tree_t *tree, const binary_tree_t *root)
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	return (balance(tree, tree));
+        return (binary_tree_balance2(tree, tree));
 }
+
