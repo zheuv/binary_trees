@@ -59,7 +59,7 @@ int balance(const binary_tree_t *tree, const binary_tree_t *root)
 	return (right);
 }
 
-int is_perfect(const binary_tree_t *tree, const binary_tree_t *root)
+int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	return ((balance(tree, tree) == 0) && (binary_tree_is_full(tree) == 1));
 }
