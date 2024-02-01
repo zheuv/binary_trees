@@ -1,10 +1,10 @@
 #include "binary_trees.h"
 /**
- * binary_tree_balance2 - Calculate the balance factor of a binary tree node
+ * balance - Calculate the balance factor of a binary tree node
  *                        with respect to another given node.
  *
  * @tree: Pointer to the binary tree node to calculate the balance factor for
- * @hypothetical_root: Pointer to the binary tree node with respect to which
+ * @root: Pointer to the binary tree node with respect to which
  *         factor is calculated.
  *
  * This function calculates the balance factor of a binary tree node by
@@ -14,22 +14,22 @@
  * calculation is performed recursively.
  *
  * @tree: Pointer to the binary tree node to calculate the balance factor for
- * @hypothetical_root: Pointer to the binary tree node with respe
+ * @root: Pointer to the binary tree node with respe
  *         factor is calculated.
  *
  * Return: The balance factor of the binary tree node.
  */
-int balance(const binary_tree_t *tree, const binary_tree_t *hypothetical_root)
+int balance(const binary_tree_t *tree, const binary_tree_t *root)
 {
         int right = 1;
         int left = 1;
 
         if (!tree)
                 return (0);
-        left += balance(tree->left, hypothetical_root);
-        right += balance(tree->right, hypothetical_root);
+        left += balance(tree->left, root);
+        right += balance(tree->right, root);
 
-        if (tree == hypothetical_root)
+        if (tree == root)
                 return (left - right);
         if (left > right)
                 return (left);
