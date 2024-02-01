@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-
 /**
  * binary_tree_is_full - Checks if a binary tree is full.
  *
@@ -7,7 +6,6 @@
  *
  * Return: 1 if the tree is full, 0 otherwise.
  */
-
 int binary_tree_is_full(const binary_tree_t *tree)
 {
 	int full = 1;
@@ -23,23 +21,12 @@ int binary_tree_is_full(const binary_tree_t *tree)
 	return (full);
 }
 /**
- * binary_tree_balance2 - Calculate the balance factor of a binary tree node
+ * balance - Calculate the balance factor of a binary tree node
  *                        with respect to another given node.
  *
  * @tree: Pointer to the binary tree node to calculate the balance factor for
- * @hypothetical_root: Pointer to the binary tree node with respect to which
+ * @root: Pointer to the binary tree node with respect to which
  *         factor is calculated.
- *
- * This function calculates the balance factor of a binary tree node by
- * comparing the heights of its left and right subtrees with respect to
- * another given node. The balance factor is determined by subtracting the
- * height of the right subtree from the height of the left subtree. The
- * calculation is performed recursively.
- *
- * @tree: Pointer to the binary tree node to calculate the balance factor for
- * @hypothetical_root: Pointer to the binary tree node with respe
- *         factor is calculated.
- *
  * Return: The balance factor of the binary tree node.
  */
 int balance(const binary_tree_t *tree, const binary_tree_t *root)
@@ -58,7 +45,14 @@ int balance(const binary_tree_t *tree, const binary_tree_t *root)
 		return (left);
 	return (right);
 }
-
+/**
+ * binary_tree_is_perfect -  creates a binary tree node.
+ *
+ * @tree: pointer to the parent node of the node to create.
+ * Dscription:A perfect binary tree is a tree in which all interior
+ * nodes have two children and all leaves are at the same level.
+ * Return: pointer to the new node, or NULL on failure
+ */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	return ((balance(tree, tree) == 0) && (binary_tree_is_full(tree) == 1));
