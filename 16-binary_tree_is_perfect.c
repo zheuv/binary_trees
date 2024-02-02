@@ -36,13 +36,19 @@ int balance(const binary_tree_t *tree, const binary_tree_t *root)
 
 	if (!tree)
 		return (0);
-	left += balance(tree->left, root);
-	right += balance(tree->right, root);
+	if (tree->left)
+		left *= (balance(tree->left, root) * 2);
+	if (tree->right)
+		right *= (balance(tree->right, root) * 2);
 
 	if (tree == root)
-		return (left - right);
-	if (left > right)
-		return (left);
+	{
+		if ((left == right) && (left != 0))
+			return (0);
+		return (1);
+	}
+	if (left != right)
+		return (0);
 	return (right);
 }
 /**
